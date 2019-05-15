@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.Arrays;
+import java.util.Scanner;
 
 /**
  * Solves Problem 22 on Project Euler
@@ -16,6 +17,7 @@ import java.util.Arrays;
  *
  * What is the total of all the name scores in the file?
  */
+
 public class ProblemXXII {
     public static void main(String[] args) throws IOException {
         int wordSum;
@@ -37,13 +39,19 @@ public class ProblemXXII {
     public static String getText() throws IOException {
         // Opens the text file and stores it in a string, since the text file is all one line
         File names = new File("./names.txt");
-        BufferedReader reader = new BufferedReader(new FileReader(names));
-        return reader.readLine();
+        Scanner reader = new Scanner(names);
+        return reader.nextLine();
     }
 
     public static int getLetterValue(char letter) {
         // Takes any capital letter and returns its position in the alphabet
-        String alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        return alphabet.indexOf(letter) + 1;
+        String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String alphabet = "abcdefghijklmnopqrstuvwxyz";
+        if (Character.isUpperCase(letter)) {
+            return ALPHABET.indexOf(letter) + 1;
+        }
+        else {
+            return alphabet.indexOf(letter) + 1;
+        }
     }
 }

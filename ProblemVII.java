@@ -14,7 +14,7 @@ public class ProblemVII {
     }
 
 
-    public static boolean isPrime(int n) {
+    public static boolean isPrime(long n) {
         //Checks if a number is negative
         if (n < 2)
             return false;

@@ -20,7 +20,7 @@ public class ProblemXXXVI {
         System.out.println("found in " + duration + " seconds");                    // Outputs runtime
     }
 
-    private static boolean isPalindrome(String str) {
+    public static boolean isPalindrome(String str) {
         StringBuilder reverse = new StringBuilder();
         for (int i = str.length() - 1; i >= 0; i--) {
             reverse.append(str.charAt(i));
